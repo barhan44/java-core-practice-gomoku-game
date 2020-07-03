@@ -46,4 +46,17 @@ public class GUIClient extends JFrame {
 			}
 		}
 	}
+	
+	private void drawCellValue(Cell cell) {
+		final int cellRowIndex = cell.getRowIndex();
+		final int cellColIndex = cell.getColIndex();
+		CellValue cellValue = this.gameTable.getValue(cellRowIndex, cellColIndex);
+		final boolean isAITurn = cellValue == CellValue.AI;
+		this.cells[cellRowIndex][cellColIndex].setText(cellValue.getValue());
+		if (isAITurn) {
+			this.cells[cellRowIndex][cellColIndex].setForeground(Color.RED);
+		} else {
+			this.cells[cellRowIndex][cellColIndex].setForeground(Color.GREEN);
+		}
+	}
 }

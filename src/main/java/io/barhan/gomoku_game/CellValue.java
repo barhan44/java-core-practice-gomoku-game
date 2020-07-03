@@ -2,8 +2,8 @@ package io.barhan.gomoku_game;
 
 public enum CellValue {
 	EMPTY(' '),
-	HUMAN('X'),
-	COMPUTER('O');
+	PLAYER('X'),
+	AI('O');
 	
 	private char value;
 	
