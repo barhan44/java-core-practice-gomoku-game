@@ -32,10 +32,10 @@ public class GUIClient extends JFrame {
 			for (int j = 0; j < this.gameTable.getSize(); j++) {
 				this.cells[i][j] = new JLabel();
 				final JLabel cell = this.cells[i][j];
-				cell.setPreferredSize(new Dimension(45, 45));
+				cell.setPreferredSize(new Dimension(Constants.cellWidth, Constants.cellHeight));
 				cell.setHorizontalAlignment(SwingConstants.CENTER);
 				cell.setVerticalAlignment(SwingConstants.CENTER);
-				cell.setFont(new Font(Font.SERIF, Font.PLAIN, 35));
+				cell.setFont(new Font(Font.SERIF, Font.PLAIN, Constants.cellFontSize));
 				cell.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 				add(cell);
 				cell.addMouseListener(new MouseAdapter() {
