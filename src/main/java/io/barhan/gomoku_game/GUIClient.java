@@ -12,6 +12,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+import io.barhan.gomoku_game.impl.GameTableImpl;
+
 public class GUIClient extends JFrame {
 	private static final long serialVersionUID = 1286745218776845696L;
 	private final JLabel cells[][];
@@ -19,8 +21,8 @@ public class GUIClient extends JFrame {
 
 	public GUIClient() {
 		super("Gomoku-game");
-		this.gameTable = null;
-		this.cells = new JLabel[10][10];
+		this.gameTable = new GameTableImpl();
+		this.cells = new JLabel[this.gameTable.getSize()][this.gameTable.getSize()];
 		this.generateUITable();
 	}
 
