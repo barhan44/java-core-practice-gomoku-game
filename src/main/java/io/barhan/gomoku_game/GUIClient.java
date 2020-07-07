@@ -17,6 +17,7 @@ import javax.swing.SwingConstants;
 import io.barhan.gomoku_game.impl.AITurnImpl;
 import io.barhan.gomoku_game.impl.GameTableImpl;
 import io.barhan.gomoku_game.impl.PlayerTurnImpl;
+import io.barhan.gomoku_game.impl.WinnerObserverImpl;
 
 public class GUIClient extends JFrame {
 	private static final long serialVersionUID = 1286745218776845696L;
@@ -32,7 +33,7 @@ public class GUIClient extends JFrame {
 		this.gameTable = new GameTableImpl();
 		this.playerTurn = new PlayerTurnImpl();
 		this.aiTurn = new AITurnImpl();
-		this.winnerObserver = null;
+		this.winnerObserver = new WinnerObserverImpl();
 		this.initGameComponents();
 		this.cells = new JLabel[this.gameTable.getSize()][this.gameTable.getSize()];
 		this.playerTurningFirst = true;
