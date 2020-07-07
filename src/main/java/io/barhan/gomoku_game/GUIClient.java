@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 
+import io.barhan.gomoku_game.impl.AITurnImpl;
 import io.barhan.gomoku_game.impl.GameTableImpl;
 import io.barhan.gomoku_game.impl.PlayerTurnImpl;
 
@@ -21,11 +22,13 @@ public class GUIClient extends JFrame {
 	private final JLabel cells[][];
 	private final GameTable gameTable;
 	private final PlayerTurn playerTurn;
+	private final AITurn aiTurn;
 
 	public GUIClient() {
 		super("Gomoku-game");
 		this.gameTable = new GameTableImpl();
 		this.playerTurn = new PlayerTurnImpl();
+		this.aiTurn = new AITurnImpl();
 		this.initGameComponents();
 		this.cells = new JLabel[this.gameTable.getSize()][this.gameTable.getSize()];
 		this.generateUITable();
@@ -57,6 +60,7 @@ public class GUIClient extends JFrame {
 
 	private void initGameComponents() {
 		this.playerTurn.setGameTable(this.gameTable);
+		this.aiTurn.setGameTable(this.gameTable);
 	}
 
 	private void drawCellValue(Cell cell) {
