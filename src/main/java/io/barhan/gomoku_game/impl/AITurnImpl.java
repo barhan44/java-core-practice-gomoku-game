@@ -91,7 +91,7 @@ public class AITurnImpl implements AITurn {
 
 	private Cell tryMakeTurnByRow(CellValue cellValue, int notBlankCount) {
 		for (int i = 0; i < this.gameTable.getSize(); i++) {
-			for (int j = 0; j < this.gameTable.getSize(); j++) {
+			for (int j = 0; j < this.gameTable.getSize() - this.winCount - 1; j++) {
 				boolean hasEmptyCells = false;
 				int count = 0;
 				List<Cell> checkedCells = new ArrayList<>();
@@ -140,7 +140,7 @@ public class AITurnImpl implements AITurn {
 	}
 
 	private Cell tryMakeTurnByMasterDiagonal(CellValue cellValue, int notBlankCount) {
-		for (int i = 0; i < this.gameTable.getSize(); i++) {
+		for (int i = 0; i < this.gameTable.getSize() - this.winCount - 1; i++) {
 			for (int j = 0; j < this.gameTable.getSize() - this.winCount - 1; j++) {
 				boolean hasEmptyCells = false;
 				int count = 0;
@@ -166,7 +166,7 @@ public class AITurnImpl implements AITurn {
 
 	private Cell tryMakeTurnBySlaveDiagonal(CellValue cellValue, int notBlankCount) {
 		for (int i = 0; i < this.gameTable.getSize() - this.winCount - 1; i++) {
-			for (int j = 0; j < this.gameTable.getSize(); j++) {
+			for (int j = this.winCount - 1; j < this.gameTable.getSize(); j++) {
 				boolean hasEmptyCells = false;
 				int count = 0;
 				List<Cell> checkedCells = new ArrayList<>();

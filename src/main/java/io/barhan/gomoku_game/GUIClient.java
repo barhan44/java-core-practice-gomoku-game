@@ -80,6 +80,8 @@ public class GUIClient extends JFrame {
 		if (this.gameTable.isCellFree(row, col)) {
 			Cell playerCell = this.playerTurn.makeTurn(row, col);
 			this.drawCellValue(playerCell);
+			Cell aiCell = this.aiTurn.makeTurn();
+			this.drawCellValue(aiCell);
 		} else {
 			JOptionPane.showMessageDialog(this, "Cell is not free! Please, choose free cell!");
 		}

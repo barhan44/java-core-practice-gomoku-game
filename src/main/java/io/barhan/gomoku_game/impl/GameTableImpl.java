@@ -65,6 +65,6 @@ public class GameTableImpl implements GameTable {
 	}
 
 	private boolean isValidCell(int row, int col) {
-		return row >= 0 && row < this.getSize() && col >= 0 && col < getSize();
+		return row >= 0 && row < this.getSize() && col >= 0 && col < this.getSize();
 	};
 }
